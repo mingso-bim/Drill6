@@ -4,6 +4,7 @@ import random
 open_canvas()
 background = load_image('TUK_GROUND.png')
 boy = load_image('animation_sheet.png')
+hand = load_image('hand_arrow.png')
 
 def line_move(p1, p2):
     x1, y1 = p1[0], p1[1]
@@ -22,6 +23,7 @@ def line_move(p1, p2):
         y = a * x + b
         background.draw(400, 300)
         boy.clip_draw(100, 100, 100, 100, x, y)
+        hand.draw(x2, y2)
         update_canvas()
         delay(0.02)
 
