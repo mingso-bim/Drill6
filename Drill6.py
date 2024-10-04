@@ -17,12 +17,17 @@ def line_move(p1, p2):
         step = -10
     else:
         step = 10
+    frame = 0
 
     for x in range(x1, x2+1, step):
         clear_canvas()
         y = a * x + b
         background.draw(400, 300)
-        boy.clip_draw(100, 100, 100, 100, x, y)
+        frame = (frame + 1) % 8
+        if x1 > x2:
+            boy.clip_draw(frame * 100, 0, 100, 100, x, y)
+        else:
+            boy.clip_draw(frame * 100, 100, 100, 100, x, y)
         hand.draw(x2, y2)
         update_canvas()
         delay(0.02)
